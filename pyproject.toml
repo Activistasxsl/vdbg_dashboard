@@ -1,9 +1,9 @@
 [project]
-name = "vdbg_dashboard"
+name = "vdbg-dashboard"
 version = "0.1.0"
-description = "Aplicación web interactiva desarrollada con Streamlit para visualizar los datos del estudio sobre violencias digitales basadas en género para Venezuela, años 2023 y 2024."
+description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.10, <3.11"
+requires-python = ">=3.10"
 dependencies = [
     "geopandas>=1.0.1",
     "matplotlib>=3.9.2",
