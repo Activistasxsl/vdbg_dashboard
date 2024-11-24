@@ -1,5 +1,0 @@
-name: vdbg_dashboard
-channels:
-  - conda-forge
-dependencies:
-  - uv
