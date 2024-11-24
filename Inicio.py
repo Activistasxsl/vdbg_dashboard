@@ -12,8 +12,8 @@ from functions.scores_and_tables import (
 from functions.widgets import select_period_sex
 
 st.set_page_config(
-    page_title="Inicio",
-    page_icon="👋",
+    page_title="Activistasxsl - Dashboard de VDBG",
+    page_icon="LOGO 6.png",
     layout="wide",
 )
 
