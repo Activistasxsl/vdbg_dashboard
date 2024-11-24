@@ -30,8 +30,8 @@ datos = data = get_data(sex=st.session_state.sex, period=st.session_state.period
 
 st.write("# Caracterización de violencias digitales basadas en género en Venezuela")
 st.write("Desde el año 2023, [Mujeres Activistas por el Software Libre](http://activistasxsl.org) realiza un esfuerzo para generar datos sobre un fenómeno aún invisibilizado en nuestro país como las violencias digitales basadas en género.")
-
-
+st.write("En el 2024, gracias al apoyo del Fondo NUMUN, hemos sado un paso adelante para mostrar un dashboard que permita reunir los resultados encontrados hasta ahora.")
+st.write("En ambos casos hemos utilizado una encuesta en línea, disponible entre los meses mayo y septiembre de cada año.")
 col1, col2 = st.columns([0.35, 0.65])
 with col1:
     with st.container(border=True):
