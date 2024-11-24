@@ -1457,7 +1457,7 @@ requires-dist = [
     { name = "geopandas", specifier = ">=1.0.1" },
     { name = "matplotlib", specifier = ">=3.9.2" },
     { name = "pandas", specifier = ">=2.2.3" },
-    { name = "plotly", specifier = ">=5.24.1" },
+    { name = "plotly" },
     { name = "streamlit", specifier = ">=1.40.1" },
 ]
 
