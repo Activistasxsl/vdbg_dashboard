@@ -1,5 +1,4 @@
 import pandas as pd
-import plotly
 import plotly.express as px
 import plotly.graph_objects
 import plotly.graph_objects as go
