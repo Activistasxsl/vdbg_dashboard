@@ -70,7 +70,7 @@ def get_data(
 
     # Filter by period (if necessary)
     if len(period) == 1:
-        df = df.query("YEAR <= @period[0]")
+        df = df.query("YEAR == @period[0]")
 
     # Filter by sex (if necessary)
     if len(sex) == 1:
