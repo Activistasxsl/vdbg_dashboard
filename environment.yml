@@ -2,11 +2,4 @@ name: vdbg_dashboard
 channels:
   - conda-forge
 dependencies:
-  - black
-  - geopandas
-  - isort
-  - matplotlib
-  - pandas
-  - plotly
-  - pre-commit
-  - streamlit
+  - uv
