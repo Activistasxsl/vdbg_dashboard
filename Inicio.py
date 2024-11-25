@@ -17,7 +17,7 @@ st.set_page_config(
     layout="wide",
 )
 
-st.logo("LOGO 1.png", size="large")
+st.logo("1.png", size="large")
 
 period, sex = select_period_sex()
 
