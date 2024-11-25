@@ -17,7 +17,7 @@ st.markdown(
 
     Estudiar las violencias basadas en género es intentar aproximarnos a un proceso 
     complejo que deriva del sistema patriarcal y la estructura social que este construye. 
-    Mujeres Activistas por el Software Libre (activistasxsl) es una organización venezolana 
+    Mujeres Activistas por el Software Libre ([Activistasxsl](http://activistasxsl.org)) es una organización venezolana 
     que, desde el año 2006 viene diseñando e implementando acciones para hacer los espacios 
     digitales más seguros para las niñas y mujeres y para incentivar el uso y apropiación 
     del software libre por parte de ellas.
