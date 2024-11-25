@@ -11,7 +11,6 @@ def update_selections():
 
 
 def select_period_sex():
-        
     st.logo(
         "static/LOGO 1.png",
         icon_image="static/LOGO 1.png",

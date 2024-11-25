@@ -1,21 +1,22 @@
-# vdbg_dashboard
-Aplicación web interactiva desarrollada con Streamlit para visualizar los datos del estudio sobre violencias digitales basadas en género para Venezuela, años 2023 y 2024. 
+# Violencias Digitales Basadas en Género - Dashboard (vdbg_dashboard)
+
+Aplicación web interactiva desarrollada con Streamlit para visualizar los datos del estudio sobre violencias digitales basadas en género para Venezuela, años 2023 y 2024.
 
 La aplicación fue implementada por Anavelyz Pérez ([ana](https://github.com/Anavelyz)) y Yurely Camacho ([yurely](https://github.com/YurelyCamacho)) quienes también son responsables del análisis exploratorio de datos, la limpieza y los resultados presentados.
 
 Además de Streamlit, se utilizaron bibliotecas de Python como Pandas para el manejo de datos, Plotly y Matplotlib para crear gráficos, y Geopandas para análisis geográfico. La aplicación se encuentra desplegada gracias al servicio de Streamlit Cloud.
 
-## Metodología de la encuestra base de la información
+## Metodología de la encuesta base de la información
 
 Se aplicó un cuestionario, en el año 2023 y 2024, disponible en línea entre los meses de mayo y octubre de cada año. El cuestionario aplicado constó de 27 preguntas, agrupadas en 3 secciones, y fue validado por activistas feministas de nuestro país. Algunas de estas preguntas cuentan, a su vez, con preguntas anidadas. Cada participante dispuso de un texto informativo a modo de consentimiento informado, donde se le explicó el uso que se daría a los datos recolectados.
 
-Las tres secciones de la encuesta comprendieron una sección de contexto, en la que buscamos conocer ubicación geográfica, edad, género con el que se identificaba la persona encuestada, ocupación, uso de Internet, así como si su uso de Internet se había incrementado luego de la pandemia por COVID-19. 
+Las tres secciones de la encuesta comprendieron una sección de contexto, en la que buscamos conocer ubicación geográfica, edad, género con el que se identificaba la persona encuestada, ocupación, uso de Internet, así como si su uso de Internet se había incrementado luego de la pandemia por COVID-19.
 
 La segunda sección comprendió preguntas situacionales en las que abordamos descripciones de escenarios de distintas violencias digitales, buscando su identificación por parte de las personas encuestadas, así como poder relevar información de interés acerca de frecuencia, relación con la persona agresora, medio digital a través del cual ocurrió, y edad aproximada en la que sucedió, entre otras cosas.
 
 Finalmente, la tercera sección, comprendió preguntas que nos permitieron indagar sobre la información que tenían las personas encuestadas sobre las violencias digitales, el marco legal vigente en nuestro país, así como conocer qué hicieron como respuesta al vivir estas violencias y si conocían a otras mujeres que hubieran vivido también violencias digitales.
 
-El tipo de muestreo utilizado determina que los resultados objetidos sean de carácter descriptivo. en este sentido, la metodología del análisis realizado incluye:
+El tipo de muestreo utilizado determina que los resultados obtenidos sean de carácter descriptivo. en este sentido, la metodología del análisis realizado incluye:
 
 1. Auditoría y limpieza de datos.
 2. Análisis tabular y gráfico
