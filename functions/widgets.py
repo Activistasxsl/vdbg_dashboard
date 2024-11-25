@@ -10,11 +10,15 @@ def update_selections():
         st.success("Filtros actualizados", icon="✅")
 
 
-def menu():
+def menu(from_pages=True):
+    if from_pages:
+        inicio = "pages/../Inicio.py"
+    else:
+        inicio = "Inicio.py"
     st.sidebar.image("static/LOGO 1.png", width=200)
     (
         st.sidebar.page_link(
-            "Inicio.py", label="Inicio", icon=":material/home:", help="Página Inicial"
+            inicio, label="Inicio", icon=":material/home:", help="Página Inicial"
         ),
     )
     (
