@@ -11,6 +11,13 @@ def update_selections():
 
 
 def select_period_sex():
+        
+    st.logo(
+        "static/LOGO 1.png",
+        icon_image="static/LOGO 1.png",
+        size="large",
+    )
+
     if "period" and "sex" not in st.session_state:
         st.session_state.period = [2023, 2024]
         st.session_state.sex = ["Mujer", "Hombre"]

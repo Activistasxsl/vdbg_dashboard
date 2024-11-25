@@ -14,7 +14,8 @@ from functions.scores_and_tables import incidence_table_by_violence_name
 from functions.widgets import select_period_sex, violence_selection
 
 st.set_page_config(
-    page_title="Incidencia por tipo de violencia",
+    page_title="Incidencia por tipo de violencia - Dashboard de VDBG",
+    page_icon="static/LOGO 6.png",
     layout="wide",
 )
 

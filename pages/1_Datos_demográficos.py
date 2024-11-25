@@ -5,7 +5,8 @@ from functions.graphs import ages_graph, gender_sex_graph, map_graph, occupation
 from functions.widgets import select_period_sex
 
 st.set_page_config(
-    page_title="Datos demográficos",
+    page_title="Datos demográficos - Dashboard de VDBG",
+    page_icon="static/LOGO 6.png",
     layout="wide",
 )
 

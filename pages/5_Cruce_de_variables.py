@@ -20,7 +20,8 @@ from functions.scores_and_tables import process_age_ranges
 from functions.widgets import select_period_sex, violence_selection
 
 st.set_page_config(
-    page_title="Cruce de variables",
+    page_title="Cruce de variables - Dashboard de VDBG",
+    page_icon="static/LOGO 6.png",
     layout="wide",
 )
 

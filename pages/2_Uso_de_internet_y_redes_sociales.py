@@ -5,8 +5,10 @@ from functions.graphs import graph_social_media_use, growth_internet_use
 from functions.widgets import select_period_sex
 
 st.set_page_config(
-    page_title="Uso de internet y redes sociales",
+    page_title="Uso de internet y redes sociales - Dashboard de VDBG",
+    page_icon="static/LOGO 6.png",
     layout="wide",
+
 )
 
 period, sex = select_period_sex()

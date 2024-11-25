@@ -6,7 +6,8 @@ from functions.scores_and_tables import quantile_for_number_violences
 from functions.widgets import select_period_sex
 
 st.set_page_config(
-    page_title="Conocimiento sobre VDBG",
+    page_title="Conocimiento sobre VDBG - Dashboard de VDBG",
+    page_icon="static/LOGO 6.png",
     layout="wide",
 )
 
