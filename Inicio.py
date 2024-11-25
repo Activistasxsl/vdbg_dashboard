@@ -9,7 +9,7 @@ from functions.scores_and_tables import (
     known_violences_percentage,
     principal_reactions,
 )
-from functions.widgets import select_period_sex
+from functions.widgets import menu, select_period_sex
 
 st.set_page_config(
     page_title="Activistasxsl - Dashboard de VDBG",
@@ -17,6 +17,7 @@ st.set_page_config(
     layout="wide",
 )
 
+menu()
 
 period, sex = select_period_sex()
 
