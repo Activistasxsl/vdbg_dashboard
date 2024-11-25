@@ -18,7 +18,7 @@ st.set_page_config(
     layout="wide",
 )
 
-menu()
+menu(from_pages=False)
 
 period, sex = select_period_sex()
 

@@ -1,11 +1,16 @@
 import streamlit as st
 
 
-def menu():
+def menu(from_pages=True):
     st.sidebar.image("static/LOGO 1.png", width=200)
+
+    if from_pages:
+        inicio = "pages/../Inicio.py"
+    else:
+        inicio = "Inicio.py"
     (
         st.sidebar.page_link(
-            "Inicio.py",
+            inicio,
             label="Inicio",
             icon=":material/home:",
             help="Página Inicial",
