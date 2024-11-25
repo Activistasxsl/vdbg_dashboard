@@ -3,7 +3,8 @@ import streamlit as st
 from functions.data_functions import get_data
 from functions.graphs import knowledge_violence_graph, violence_term_graph
 from functions.scores_and_tables import quantile_for_number_violences
-from functions.widgets import menu, select_period_sex
+from functions.widgets import select_period_sex
+from menu import menu
 
 st.set_page_config(
     page_title="Conocimiento sobre VDBG - Dashboard de VDBG",

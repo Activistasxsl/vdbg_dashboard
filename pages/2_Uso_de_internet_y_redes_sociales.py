@@ -2,7 +2,8 @@ import streamlit as st
 
 from functions.data_functions import get_data
 from functions.graphs import graph_social_media_use, growth_internet_use
-from functions.widgets import menu, select_period_sex
+from functions.widgets import select_period_sex
+from menu import menu
 
 st.set_page_config(
     page_title="Uso de internet y redes sociales - Dashboard de VDBG",

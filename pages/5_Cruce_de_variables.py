@@ -17,7 +17,8 @@ from functions.graphs import (
 )
 from functions.scores_and_tables import process_age_ranges
 
-from functions.widgets import menu, select_period_sex, violence_selection
+from functions.widgets import select_period_sex, violence_selection
+from menu import menu
 
 st.set_page_config(
     page_title="Cruce de variables - Dashboard de VDBG",

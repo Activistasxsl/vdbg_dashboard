@@ -11,7 +11,8 @@ from functions.graphs import (
     temporality_graph,
 )
 from functions.scores_and_tables import incidence_table_by_violence_name
-from functions.widgets import menu, select_period_sex, violence_selection
+from functions.widgets import select_period_sex, violence_selection
+from menu import menu
 
 st.set_page_config(
     page_title="Incidencia por tipo de violencia - Dashboard de VDBG",

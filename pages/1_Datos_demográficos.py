@@ -2,7 +2,8 @@ import streamlit as st
 
 from functions.data_functions import get_data
 from functions.graphs import ages_graph, gender_sex_graph, map_graph, occupation_graph
-from functions.widgets import menu, select_period_sex
+from functions.widgets import select_period_sex
+from menu import menu
 
 st.set_page_config(
     page_title="Datos demográficos - Dashboard de VDBG",

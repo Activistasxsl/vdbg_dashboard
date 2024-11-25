@@ -1,6 +1,6 @@
 import streamlit as st
 
-from functions.widgets import menu
+from menu import menu
 
 
 st.set_page_config(
