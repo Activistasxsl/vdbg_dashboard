@@ -1,6 +1,6 @@
 # Violencias Digitales Basadas en Género - Dashboard (vdbg_dashboard)
 
-Estudiar las violencias basadas en género es intentar aproximarnos a un proceso complejo que deriva del sistema patriarcal y la estructura social que este construye. Mujeres Activistas por el Software Libre ([activistasxsl](https://activistasxsl.org)) es una organización venezolana que, desde el año 2006 viene diseñando e implementando acciones para hacer los espacios digitales más seguros para las niñas y mujeres y para incentivar el uso y apropiación del software libre por parte de ellas. 
+Estudiar las violencias basadas en género es intentar aproximarnos a un proceso complejo que deriva del sistema patriarcal y la estructura social que este construye. Mujeres Activistas por el Software Libre ([activistasxsl](https://activistasxsl.org)) es una organización venezolana que, desde el año 2006 viene diseñando e implementando acciones para hacer los espacios digitales más seguros para las niñas y mujeres y para incentivar el uso y apropiación del software libre por parte de ellas.
 
 Este dashboard es una iniciativa de Activistasxsl que se basó en diseñar e implementar una aplicación web interactiva desarrollada en Streamlit para visualizar los datos del estudio de caracterización de las violencias digitales basadas en género para Venezuela, años 2023 y 2024.
 
