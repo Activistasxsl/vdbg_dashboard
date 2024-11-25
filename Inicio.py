@@ -17,6 +17,8 @@ st.set_page_config(
     layout="wide",
 )
 
+st.logo("LOGO 6.png")
+
 period, sex = select_period_sex()
 
 if st.session_state.sex == ["Mujer"]:
