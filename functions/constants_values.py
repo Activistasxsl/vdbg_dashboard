@@ -56,6 +56,8 @@ VIOLENCES = list(VIOLENCE_NAMES_DICT.keys())
 
 KEY_VIOLENCE_NAMES = {v: k for k, v in VIOLENCE_NAMES_DICT.items()}
 
+list_key_violence_names = sorted(KEY_VIOLENCE_NAMES.keys())
+
 VIOLENCES_FORMAL_NAMES = list(VIOLENCE_NAMES_DICT.values())
 
 

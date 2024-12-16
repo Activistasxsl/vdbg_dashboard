@@ -1,6 +1,6 @@
 import streamlit as st
 
-from functions.constants_values import KEY_VIOLENCE_NAMES
+from functions.constants_values import KEY_VIOLENCE_NAMES, list_key_violence_names
 
 
 def update_selections():
@@ -102,7 +102,8 @@ def select_period_sex():
 def violence_selection(index=None):
     title = st.selectbox(
         "Selecciona la violencia que deseas ver",
-        KEY_VIOLENCE_NAMES.keys(),
+        list_key_violence_names,
+        placeholder="Selecciona la violencia que deseas ver en detalle",
         index=None,
         key="tipo_violencia",
     )
