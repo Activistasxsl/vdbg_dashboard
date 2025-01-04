@@ -33,7 +33,7 @@ def get_data(
     if os.path.exists("data/clean_data.pkl"):
         df = pd.read_pickle("data/clean_data.pkl")
     else:
-        df = pd.read_pickle("/raw/datos_23_24.pkl")
+        df = pd.read_pickle("data/raw/datos_23_24.pkl")
 
         # Convert data types
         parentesco_lista = [
