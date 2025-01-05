@@ -65,7 +65,7 @@ def get_data(
                 .astype("category")
                 .cat.set_categories(["Mujer", "Hombre", "Un grupo de personas"])
             )
-
+        df = df[df["estado"] != "Soy Venezolana pero no vivo en Venezuela"]
         df.to_pickle("data/clean_data.pkl")
 
     # Filter by period (if necessary)
