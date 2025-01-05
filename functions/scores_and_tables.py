@@ -28,17 +28,11 @@ def violence_victims_percentages(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def average_violence(df: pd.DataFrame, number_victims: bool = False) -> int:
-    for i in VIOLENCES:
-        df.loc[:, i] = df.loc[:, i].replace(
-            [
-                "No",
-                "Sí",
-            ],
-            [0, 1],
-        )
+    pd.set_option("future.no_silent_downcasting", True)
+    df[VIOLENCES] = df[VIOLENCES].replace({"No": 0, "Sí": 1})
     number_violences = pd.DataFrame(df[VIOLENCES].T.sum().value_counts()).sort_index()
     if number_victims:
-        return number_violences[1:].sum()[0]
+        return number_violences[1:].sum().iloc[0]
     else:
         average_violences = int(
             round(
@@ -135,13 +129,8 @@ def social_media_use(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def incidence_table_by_violence_name(df: pd.DataFrame, selected_violence: str):
-    df.loc[:, selected_violence].replace(
-        [
-            "No",
-            "Sí",
-        ],
-        [0, 1],
-        inplace=True,
+    df.loc[:, selected_violence] = df.loc[:, selected_violence].replace(
+        {"No": 0, "Sí": 1},
     )
     columns = [s for s in df.columns[:-32] if selected_violence in s]
     info_selected_violence = df.query("{} == 1".format(selected_violence))[columns]
