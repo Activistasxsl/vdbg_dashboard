@@ -40,7 +40,7 @@ st.write(
 )
 st.write(
     """
-    En el 2023, gracias al apoyo del Fondo NUMUN, hemos dado un paso adelante
+    En el 2024, gracias al apoyo del Fondo NUMUN, dimos un paso adelante
     para mostrar un dashboard que permita reunir los resultados encontrados hasta
     ahora.
     """
