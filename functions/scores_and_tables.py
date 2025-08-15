@@ -477,9 +477,13 @@ def reactions_violence(df: pd.DataFrame) -> pd.DataFrame:
     dfs = []
     keys = []
     cols = [s for s in df.columns if "reaccion_" in s]
+    df[VIOLENCES] = df[VIOLENCES].replace({"No": 0, "Sí": 1, "Si": 1})
     for violence in VIOLENCES:
         keys.append(VIOLENCE_NAMES_DICT[violence])
         info_selected_violence = df.query("{} == 1".format(violence))[cols]
+        info_selected_violence = info_selected_violence.apply(
+            pd.to_numeric, errors="coerce"
+        ).fillna(0)
         if info_selected_violence.empty:
             continue
         tbl = round(

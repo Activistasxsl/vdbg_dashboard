@@ -1,5 +1,7 @@
+import pandas as pd
 import streamlit as st
 
+from functions.constants_values import REACTIONS, VIOLENCE_NAMES_DICT, VIOLENCES
 from functions.data_functions import get_data
 from functions.graphs import (
     age_violence_graph,
@@ -39,6 +41,7 @@ else:
     string = "personas"
 
 ages_ = process_age_ranges(data)
+
 
 st.write("# Cruce de variables")
 with st.container(border=True):
