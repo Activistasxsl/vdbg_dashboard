@@ -3,4 +3,3 @@ matplotlib
 pandas
 plotly
 streamlit
-cmcrameri
