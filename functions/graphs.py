@@ -3,9 +3,14 @@ import plotly.express as px
 import plotly.graph_objects
 import plotly.graph_objects as go
 import streamlit as st
+
 from matplotlib import pyplot as plt
 
-from functions.constants_values import SOCIAL_MEDIA_NAMES
+from functions.constants_values import (
+    BALTLOW_100_SCRAMBLED_SWATCHES,
+    COLORS,
+    SOCIAL_MEDIA_NAMES,
+)
 from functions.scores_and_tables import (
     age_tables,
     answers_by_state,
@@ -43,11 +48,7 @@ def pie_answers_by_sex(df: pd.DataFrame) -> plotly.graph_objects.Figure:
     )
     fig.update_traces(
         marker=dict(
-            colors=[
-                "rgb(149, 27, 129)",
-                "rgb(57, 105, 172)",
-                "rgb(7, 171, 157)",
-            ],
+            colors=COLORS,
             line=dict(color="white", width=1),
         )
     )
@@ -67,10 +68,7 @@ def incidence_of_violence(df: pd.DataFrame, sex: list) -> plotly.graph_objects.F
         incidence_of_violence[["Sí", "No"]].sort_values("Sí"),
         orientation="h",
         text_auto=True,
-        color_discrete_map={
-            "Sí": "rgb(149, 27, 129)",
-            "No": "rgb(57, 105, 172)",
-        },
+        color_discrete_sequence=COLORS,
     )
     fig.update_layout(
         title="Incidencia de violencias",
@@ -98,6 +96,7 @@ def gender_sex_graph(df: pd.DataFrame) -> plotly.graph_objects.Figure:
         y="count",
         color="sexo",
         barmode="group",
+        color_discrete_sequence=COLORS,
     )
     fig.update_layout(
         title="Número de personas por sexo y género",
@@ -134,7 +133,7 @@ def ages_graph(df: pd.DataFrame, sex: list) -> plotly.graph_objects.Figure:
         textposition="outside",
         cliponaxis=False,
         showlegend=False,
-        marker_color="rgb(7, 171, 157)",
+        marker_color=COLORS[0],
         marker_line_color="white",
     )
     st.plotly_chart(fig)
@@ -151,7 +150,7 @@ def map_graph(df: pd.DataFrame) -> plotly.graph_objects.Figure:
     df_map.plot(
         "Personas",
         ax=ax,
-        cmap="RdPu",
+        cmap="Oranges",
         edgecolor="black",
         categorical=True,
         legend=True,
@@ -207,7 +206,7 @@ def growth_internet_use(df: pd.DataFrame) -> plotly.graph_objects.Figure:
     )
     fig.update_traces(
         marker=dict(
-            colors=["rgb(149, 27, 129)", "rgb(57, 105, 172)", "rgb(7, 171, 157)"],
+            colors=COLORS,
             line=dict(color="white", width=1),
         )
     )
@@ -219,8 +218,7 @@ def graph_social_media_use(df: pd.DataFrame) -> plotly.graph_objects.Figure:
     fig = px.bar(
         df_social_media.sort_values("No la utilizo"),
         orientation="h",
-        color_discrete_sequence=px.colors.qualitative.Bold[:4]
-        + [px.colors.qualitative.Prism_r[0]],
+        color_discrete_sequence=BALTLOW_100_SCRAMBLED_SWATCHES,
     )
     fig.update_layout(
         title="Uso diario de aplicaciones/redes sociales",
@@ -587,7 +585,8 @@ def social_media_violence_graph(
     for medio in list(df.index.values):
         new_index.append(SOCIAL_MEDIA_NAMES[medio.split("_")[0]])
     df.index = new_index
-    df = round(df / df_violence.iloc[:, 0].sum() * 100, 2)
+    df = df / df_violence.iloc[:, 0].sum() * 100
+    df = round(df.apply(pd.to_numeric, errors="coerce").fillna(0), 2)
     fig = px.bar(
         df,
         x=df.index,
@@ -631,7 +630,7 @@ def violence_term_graph(df: pd.DataFrame) -> plotly.graph_objects.Figure:
     )
     fig.update_traces(
         marker=dict(
-            colors=["rgb(149, 27, 129)", "rgb(57, 105, 172)", "rgb(7, 171, 157)"],
+            colors=COLORS,
             line=dict(color="white", width=1),
         )
     )
@@ -671,7 +670,7 @@ def knowledge_violence_graph(
         textposition="outside",
         cliponaxis=False,
         showlegend=False,
-        marker_color="rgb(149, 27, 129)",
+        marker_color=COLORS[0],
         marker_line_color="white",
         texttemplate="%{value: .4} %",
     )
@@ -695,7 +694,7 @@ def age_violence_graph(
         color="Violencia",
         title="Tasa de incidencia por grupo etáreo según tipo de violencia",
         barmode="group",
-        color_discrete_sequence=px.colors.qualitative.Plotly,
+        color_discrete_sequence=BALTLOW_100_SCRAMBLED_SWATCHES,
     )
     fig.update_layout(
         font=dict(family="Arial", size=16, color="black"),
@@ -736,7 +735,7 @@ def social_media_violences_graph(
         title="Tipo de violencia según el medio por el cual ocurrió",
         barmode="stack",
         orientation="h",
-        color_discrete_sequence=px.colors.qualitative.Bold,
+        color_discrete_sequence=BALTLOW_100_SCRAMBLED_SWATCHES,
     )
     fig.update_layout(
         font=dict(family="Arial", size=16, color="black"),
@@ -768,7 +767,7 @@ def kinship_violence_graph(
             string
         ),
         barmode="group",
-        color_discrete_sequence=px.colors.qualitative.Plotly,
+        color_discrete_sequence=COLORS,
     )
     fig.update_layout(
         legend_title="Parentesco con el agresor(a):",
@@ -794,7 +793,7 @@ def identification_aggressor_violence_graph(
         color="Identificación",
         barmode="group",
         text_auto="True",
-        color_discrete_map={"Sí": "rgb(149, 27, 129)", "No": "rgb(57, 105, 172)"},
+        color_discrete_map={"Sí": COLORS[3], "No": COLORS[1]},
     )
     fig.update_layout(
         title="Identificación del agresor",
@@ -828,11 +827,7 @@ def sex_violence_graph(df: pd.DataFrame, sex: list) -> plotly.graph_objects.Figu
         y="Porcentaje",
         color="Sexo",
         barmode="group",
-        color_discrete_sequence=[
-            "rgb(149, 27, 129)",
-            "rgb(57, 105, 172)",
-            "rgb(7, 171, 157)",
-        ],
+        color_discrete_sequence=[COLORS[1], COLORS[0], COLORS[2:]],
         text_auto=True,
     )
     fig.update_layout(
@@ -955,7 +950,7 @@ def occupations_violences_graph(
         y="Violencia",
         color="Ocupación",
         orientation="h",
-        color_discrete_sequence=px.colors.qualitative.Bold,
+        color_discrete_sequence=BALTLOW_100_SCRAMBLED_SWATCHES,
     )
     fig.update_layout(
         title="Ocupaciones más frecuentes por violencia sufrida",
@@ -980,7 +975,7 @@ def location_violence_graph(df: pd.DataFrame, sex: list) -> plotly.graph_objects
         y="Violencia",
         color="Estado",
         orientation="h",
-        color_discrete_sequence=px.colors.qualitative.Bold,
+        color_discrete_sequence=BALTLOW_100_SCRAMBLED_SWATCHES,
     )
     fig.update_layout(
         title="Ubicación de las víctimas por violencia sufrida",
@@ -1015,7 +1010,7 @@ def frequency_all_violence_graph(
         color="Frecuencia",
         orientation="v",
         barmode="group",
-        color_discrete_sequence=px.colors.qualitative.Bold,
+        color_discrete_sequence=COLORS,
     )
     fig.update_layout(
         title="Cantidad de veces que la víctima reporta haber sufrido la violencia",
@@ -1067,7 +1062,7 @@ def reactions_graph(df: pd.DataFrame, sex: list) -> plotly.graph_objects.Figure:
         textposition="outside",
         cliponaxis=False,
         showlegend=False,
-        marker_color="rgb(57, 105, 172)",
+        marker_color=COLORS[0],
         marker_line_color="white",
         texttemplate="%{value:.2f} %",
     )
@@ -1090,7 +1085,7 @@ def reactions_violence_graph(
         y="Violencia",
         color="Reacciones",
         orientation="h",
-        color_discrete_sequence=px.colors.qualitative.Bold,
+        color_discrete_sequence=BALTLOW_100_SCRAMBLED_SWATCHES,
     )
     fig.update_layout(
         title="Reacciones por violencia sufrida",
@@ -1124,7 +1119,7 @@ def knowledge_violences_names_graph(
         color="Conocimiento",
         barmode="group",
         orientation="v",
-        color_discrete_sequence=["rgb(149, 27, 129)", "rgb(57, 105, 172)"],
+        color_discrete_sequence=COLORS,
         text_auto=True,
     )
     fig.update_layout(

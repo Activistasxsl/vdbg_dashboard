@@ -40,6 +40,7 @@ else:
 
 ages_ = process_age_ranges(data)
 
+
 st.write("# Cruce de variables")
 with st.container(border=True):
     age_violence_graph(ages_, sex)
