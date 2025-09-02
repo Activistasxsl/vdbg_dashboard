@@ -518,7 +518,6 @@ def knowledge_violences_names(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def ocupation_violence_medio(df: pd.DataFrame, ocupation: str) -> pd.DataFrame:
-
     df_filtered = df[df["ocupacion"] == ocupation].copy()
     individuals = len(df_filtered)
 
