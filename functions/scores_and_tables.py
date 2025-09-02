@@ -515,3 +515,55 @@ def knowledge_violences_names(df: pd.DataFrame) -> pd.DataFrame:
     tbl_ = pd.concat(dfs, keys=keys, names=["Violencia", "Conocimiento"])
     tbl_ = tbl_.reset_index().rename(columns={"proportion": "Porcentaje"})
     return tbl_
+
+
+def ocupation_violence_medio(df: pd.DataFrame, ocupation: str) -> pd.DataFrame:
+
+    df_filtered = df[df["ocupacion"] == ocupation].copy()
+    individuals = len(df_filtered)
+
+    if df_filtered.empty:
+        return pd.DataFrame()
+
+    dfs = []
+
+    for violence in VIOLENCES:
+        df_filtered.loc[:, violence] = df_filtered.loc[:, violence].replace(
+            {"No": 0, "Sí": 1}
+        )
+        columns = [s for s in df_filtered.columns[:-32] if violence in s]
+
+        info_selected_violence = df_filtered[df_filtered[violence] == 1][columns]
+
+        if info_selected_violence.empty:
+            continue
+
+        cols = [
+            s
+            for s in info_selected_violence.columns
+            if any(s.startswith(n) for n in SOCIAL_MEDIA_NAMES.keys())
+        ]
+        cols = cols[:-1]
+
+        df_violence = info_selected_violence[cols].astype(int)
+
+        violence_sum = df_violence.sum().to_frame().T
+        violence_sum.rename(
+            columns={
+                s: SOCIAL_MEDIA_NAMES[s.split("_")[0]] for s in violence_sum.columns
+            },
+            inplace=True,
+        )
+        violence_sum["Violencia"] = VIOLENCE_NAMES_DICT[violence]
+        dfs.append(violence_sum)
+
+    if not dfs:
+        return pd.DataFrame()
+
+    result = pd.concat(dfs, ignore_index=True)
+    result = result.melt(id_vars=["Violencia"], var_name="Medio")
+    result.dropna(inplace=True)
+    result = result[result.value > 0]
+    result["Porcentaje"] = (result["value"] / individuals * 100).round(2)
+
+    return result

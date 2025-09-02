@@ -21,6 +21,7 @@ from functions.scores_and_tables import (
     knowledge_violences_names,
     location_violence,
     occupations_violences,
+    ocupation_violence_medio,
     post_covid_internet,
     principal_reactions,
     reactions_violence,
@@ -33,6 +34,7 @@ from functions.scores_and_tables import (
     ten_common_occupations,
     violence_victims_percentages,
 )
+from functions.widgets import ocupation_selection
 
 
 def pie_answers_by_sex(df: pd.DataFrame) -> plotly.graph_objects.Figure:
@@ -1139,4 +1141,42 @@ def knowledge_violences_names_graph(
         textposition="outside",
         texttemplate="%{value:.2f} %",
     )
+    st.plotly_chart(fig)
+
+
+def violence_ocupation_media_graph(
+    df: pd.DataFrame, sex: list
+) -> plotly.graph_objects.Figure:
+    ocupation = ocupation_selection(df)
+    if ocupation is None:
+        st.stop()
+    tbl = ocupation_violence_medio(df, ocupation)
+
+    if sex == ["Mujer"]:
+        xaxes = "% de mujeres cuya ocupación es " + ocupation.casefold()
+    elif sex == ["Hombre"]:
+        xaxes = "% de hombres cuya ocupación es " + ocupation.casefold()
+    else:
+        xaxes = "% de personas cuya ocupación es " + ocupation.casefold()
+    fig = px.bar(
+        tbl,
+        x="Porcentaje",
+        y="Violencia",
+        color="Medio",
+        orientation="h",
+        color_discrete_sequence=BALTLOW_100_SCRAMBLED_SWATCHES,
+    )
+    fig.update_layout(
+        title="Medio por el cual ocurrieron las violencias según ocupación: "
+        + ocupation,
+        xaxis_title=xaxes,
+        yaxis_title="Violencia",
+        legend_title="Ocupaciones",
+        font=dict(
+            family="Arial",
+            size=18,
+            color="black",
+        ),
+    )
+
     st.plotly_chart(fig)

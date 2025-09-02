@@ -112,3 +112,14 @@ def violence_selection(index=None):
     else:
         selected_violence = None
     return title, selected_violence
+
+
+def ocupation_selection(df):
+    selected_ocupation = st.selectbox(
+        "Selecciona la ocupación que deseas consultar",
+        df.ocupacion.sort_values().unique(),
+        placeholder="Selecciona la ocupación que deseas ver",
+        index=None,
+        key="ocupation",
+    )
+    return selected_ocupation

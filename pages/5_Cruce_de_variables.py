@@ -14,6 +14,7 @@ from functions.graphs import (
     sex_kinship_by_violence_graph,
     sex_violence_graph,
     social_media_violences_graph,
+    violence_ocupation_media_graph,
 )
 from functions.scores_and_tables import process_age_ranges
 
@@ -101,3 +102,7 @@ with st.container(border=True):
 with st.container(border=True):
     # st.write("## Conocimiento del nombre de la violencia por tipo de violencia")
     knowledge_violences_names_graph(data, sex)
+
+with st.container(border=True):
+    # st.write("## Violencias digitales y ocupaciones")
+    violence_ocupation_media_graph(data, sex)
