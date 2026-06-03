@@ -10,7 +10,7 @@ Además de Streamlit, se utilizaron bibliotecas de Python como Pandas para el ma
 
 ## Metodología de la encuesta base de la información
 
-Se aplicó un cuestionario, en el año 2023 y 2024, disponible en línea entre los meses de mayo y octubre de cada año. El cuestionario aplicado constó de 27 preguntas, agrupadas en 3 secciones, y fue validado por activistas feministas de nuestro país. Algunas de estas preguntas cuentan, a su vez, con preguntas anidadas. Cada participante dispuso de un texto informativo a modo de consentimiento informado, donde se le explicó el uso que se daría a los datos recolectados.
+Se aplicó un cuestionario, en el año 2023, 2024 y 2025 disponible en línea entre los meses de mayo y octubre de cada año. El cuestionario aplicado constó de 27 preguntas, agrupadas en 3 secciones, y fue validado por activistas feministas de nuestro país. Algunas de estas preguntas cuentan, a su vez, con preguntas anidadas. Cada participante dispuso de un texto informativo a modo de consentimiento informado, donde se le explicó el uso que se daría a los datos recolectados.
 
 Las tres secciones de la encuesta comprendieron una sección de contexto, en la que buscamos conocer ubicación geográfica, edad, género con el que se identificaba la persona encuestada, ocupación, uso de Internet, así como si su uso de Internet se había incrementado luego de la pandemia por COVID-19.
 
